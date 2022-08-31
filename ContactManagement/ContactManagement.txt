@@ -1,0 +1,118 @@
+CONTACT APP
+
+===============================================================================================================
+npm strart -> json-server
+ng serve
+===============================================================================================================
+
+- ng new contactApp
+- npm i bootstrap @fortawesome/fontawesome-free
+- index.html - cdnjs fontawesome -> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+- angular.json - bootstrapcss,fontawesome,js
+- style.css -> google font (https://fonts.google.com/specimen/Fredoka)
+
+- ng g c navbar
+- ng g c contact-manager
+- ng g c add-contact
+- ng g c edit-contact
+- ng g c view-contact
+- ng g c spinner
+- ng g s services/contact
+
+CREATE MODEL
+- myContact.ts
+- myGroup.ts
+
+CONFIGURE ROUTES
+- app-routing.ts 
+
+CREATE PAGE NOT FOUND 
+- ng g c page-not-found
+- app-routing.ts 
+- page-not-found.html 
+
+===============================================================================================================
+
+FRONT END DESIGN :
+
+NAVBAR
+- app.html -> navbar selector
+- nav.html 
+
+CONTACT-MANAGER
+- contactmanager.html 
+
+ADD CONTACT
+- addcontact.html
+
+EDIT CONTACT
+- editcontact.html
+
+VIEW CONTACT
+- viewcontact.html
+
+===============================================================================================================
+
+BACKEND WORKING :
+
+
+SETUP JSON-SERVER
+- server folder
+- npm init --yes
+- npm install json-server
+- create = db.json
+- configure = package.json --> "scripts": { "start": "json-server --watch db.json -p 4000" }
+- npm start
+-  http://localhost:4000/contacts
+   http://localhost:4000/groups
+
+
+ANGULAR SERVICE - GET,POST,PUT,DELETE
+- app.module.ts --> HttpClientModule
+- view all contacts --> GET http://localhost:4000/contacts
+- view single contact --> GET http://localhost:4000/contacts/:contactId
+- create contact --> POST http://localhost:4000/contacts
+- edit contact -->PUT http://localhost:4000/contacts/:contactId
+- delete contact -->DELETE http://localhost:4000/contacts/:contactId
+- view all groups --> GET http://localhost:4000/groups
+- view single group --> GET http://localhost:4000/groups/:contact.groupId
+
+- contact.service.ts --> inject HttpClient, baseUrl, getAllContacts(),getContact(contactId:string),createContact(contact:MyContact),editContact(contact:MyContact,contactId:string),deleteContact(contactId:string), getAllGroups(),getGroup(contact:MyContact)
+
+
+DISPLAY DATA IN CARDS -- DISPLAY CONTACT DATA IN CONTACT-MANAGER 
+- contact-manager.ts --> inject contactservice , loading,contacts,errorMessage,
+- contact-manager.html --> *ngIf, *ngFor, {{}}
+
+
+SPINNER 
+- Spinner.html
+- contact-manager.html
+
+ERROR 
+- contact-manager.html
+(stop server in terminal - ctrl c)
+(npm start)
+
+VIEW CONTACT
+- view-contact.ts --> contactId,loading,contact,errorMessage, inject ActivatedRoute and contactService
+- view-contact.html --> *ngIf , spinner and error, {{}}
+
+ADD CONTACT - TEMPLATE FORM
+- add.ts --> loading,contact,errorMessage,groups
+- add.html --> *ngIf,{{}}
+- app.module.ts --> FormsModule
+- add.html --> [(ngModel)],name, addSubmit()
+- add.ts -->inject router, addSubmit()
+
+EDIT CONTACT with pre-info
+- edit.ts --> loading,contactId,contact,errorMessage,groups, inject activatedroute and contactService
+- edit.html --> [(ngModel)],*ngFor
+
+EDIT CONTACT to update info
+- edit.html -->submitUpdate()
+- edit.ts --> submitUpdate(), inject router
+
+DELETE CONTACT
+- contact-manager.html --> deleteContact(contact.id)
+- contact-manager.ts --> deleteContact()

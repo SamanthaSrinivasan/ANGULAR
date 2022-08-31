@@ -1,0 +1,73 @@
+- npm install json-server
+- index.html --> bootstrap css,js cdn links
+- ng g c restaurant-dash
+
+- restaurant-dash.html 
+- restaurant-dash.css
+
+--> ADD Restaurant 
+- app.module.ts - ReactiveFormsModule
+- restaurant-dash.html - Modal
+- restaurant-dash.ts - formvalue,formgroup,formbuilder
+- restaurant-dash.html - form -- formgroup,value,formcontrolname
+- app.module.ts - - form data to interact with server - httpClientModule
+- json-server --watch db.json
+- ng g s shared/api
+- app.service.ts -- inject httpClient -- post,get,put,delete
+- Create file restaurant.model.ts
+
+ADD RESTAURANT
+- restaurant-dash.ts--> restaurantModelObj,Inject ApiService, addResto()
+- restaurant-dash.html--> addResto() -> Add Details button
+
+VIEW ALL RESTAURANT
+- restaurant-dash.ts--> restaurantAll , getAllRestaurants() and mention in ngOnInit()
+- restaurant-dash.html--> ngFor and interpolation of data
+
+DELETE RESTAURANT
+- restaurant-dash.ts--> deleteResto()
+- restaurant-dash.html
+
+EDIT RESTAURANT --> to have the existing data on the update window which is to be updated
+- restaurant-dash.html- copy modal button type from Add Restaurant and paste in edit button
+- restaurant-dash.ts--> onEditResto()
+- restaurant-dash.html-> onEditResto()
+
+- restaurant-dash.html-> updateResto() -> update button
+- restaurant-dash.ts--> updateResto()
+
+BUTTON VISIBILITY 
+Add details -> Remove Update
+Edit -> Remove Add
+- restaurant-dash.ts	--> showAdd,showUpdate,clickAddResto() and onEdit()
+- restaurant-dash.html-> clickAddResto() in Add Restaurant  && ngIf on add and update button
+
+===============================================================================================================
+
+- app.routingmodule.ts --> routes - login,signup,restuarant-dash
+
+LOGIN
+- ng g c login
+- login.html 
+- login.css 
+
+SIGNUP
+- ng g c signup
+- signup.html
+- signup.css
+
+- db.json --> creating user array --> signup
+- signup.component.ts --> formgroup,formbuilder
+- signup.html --> bind formGroup , signup()
+- signup.component.ts ->  signup(),httpclient,router
+
+- login.component.ts --> formgroup,formbuilder
+- login.html --> bind formGroup , login()
+- login.component.ts --> login(),httpclient,router
+
+LOGOUT
+- restaurant-dash.html -> in navbar - routerLink for login
+
+
+
+

@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": 5,
+      "name": "samantha",
+      "email": "a",
+      "mobile": "1",
+      "address": "d",
+      "services": "v"
+    }
+  ],
+  "signup": [
+    {
+      "name": "sam",
+      "mobile": "324567",
+      "email": "s@gmail.com",
+      "password": "123",
+      "id": 1
+    },
+    {
+      "name": "sam",
+      "mobile": "7348889563",
+      "email": "s@gmail.com",
+      "password": "123",
+      "id": 2
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

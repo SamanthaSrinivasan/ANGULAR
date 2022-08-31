@@ -1,0 +1,48 @@
+Angular 12
+Json-Server
+Bootstrap
+
+
+Add Bootstrap CDN Link in index.html
+
+- ng g c StudentDash
+- StudentDash.html
+- app.module.ts - import reactiveform
+- StudentDash.ts
+
+- ng g s shared/api
+- app.module.ts - HttpClientModule
+- Install Json-Server -->  npm i -g json-server --> send and receive data from server --> data call,gather,add,update,delete
+- Create a db.json file with some data
+- json-server --watch db.json
+- http://localhost:3000/posts/1
+- api.service.ts - HttpClient, postStudent()- put data,getStudent()- fetch data,updateStudent(),deleteStudent()
+- Create file student-dash.model.ts
+
+ADD STUDENTS
+- StudentDash.ts --> StudentModelObj,Inject ApiService, postStudentDetails()
+- StudentDash.html --> postStudentDetails()
+
+VIEW ALL STUDENTS
+- StudentDash.ts --> studentAll , getAllStudents() and mention in ngOnInit()
+- StudentDash.html --> ngFor and interpolation
+
+DELETE STUDENT
+- StudentDash.ts --> deleteStudents()
+- StudentDash.html 
+
+EDIT STUDENT --> to have the existing data on the update window which is to be updated
+- StudentDash.html  - copy modal button type and paste in edit button
+- StudentDash.ts --> onEdit()
+- StudentDash.html  -> onEdit()
+
+- StudentDash.html  -> updateStudentDetails()
+- StudentDash.ts --> updateStudentDetails()
+
+BUTTON VISIBILITY 
+- Add details -> Remove Update
+- Edit -> Remove Add
+- StudentDash.ts --> showAdd,showUpdate,clickAddStudent() and onEdit()
+- StudentDash.html  -> clickAddStudent() - Add Details  && ngIf on add and update button
+
+

@@ -1,0 +1,38 @@
+Data Binding :
+ts :
+serverId: number = 21;
+serverStatus: string = 'offline'
+getStatus(): string{ return this.serverStatus; }
+html :
+{{serverId}} is {{getStatus()}}
+
+
+NEWS APP
+
+- bootstrap - css,js
+
+- ng g c top-news
+- app.html - navbar
+- app.routing.ts - path - topnewscomp
+- app.module.ts - HttpClientModule
+
+- ng g s service/newsapi
+- app.module.ts - providers: [NewsapiService]
+- google - newsapi.org - documentation - top headlines
+- newsapi.service.ts - inject httpclient, topnew var and paste api key from google, topHeadlines()
+https://newsapi.org/v2/top-headlines?country=us&apiKey=db4903f0010a402d8ff14145fc16f73e
+- topnews.ts - inject newsapiservice, topHeadlinesData[]
+- topnews.html - urlToImage etc -- inspect console
+- style.css 
+
+- ng g p short - to make all the headings or card of the same size - pipe
+- short-pipe.ts
+- topnews.html - title --> | shorten:50
+
+========================================================
+
+- ng g c tech-news
+- google - newsapi.org - documentation - top headlines api - category = technology
+https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=db4903f0010a402d8ff14145fc16f73e
+
+

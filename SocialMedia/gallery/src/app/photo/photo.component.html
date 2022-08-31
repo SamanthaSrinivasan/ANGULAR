@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let p of pic"  class="col-md-4 mt-5">
+            <div class="card" style="width: 18rem;">
+                <img [src]="p.Photo" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{p.pName}}</h5>
+                  <p class="card-text">Formula One Racing</p>
+                  <a (click)="LikeCounter(p)" class="btn btn-primary">Like</a> {{p.Like}} &nbsp;<a (click)="DislikeCounter(p)" class="btn btn-danger">Dislike</a> {{p.Dislike}}
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

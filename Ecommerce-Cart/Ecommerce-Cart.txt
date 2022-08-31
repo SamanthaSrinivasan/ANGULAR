@@ -1,0 +1,47 @@
+Ecommerce- Cart
+
+- ng new ecart
+- ng g c components/header
+- ng g c components/products
+- ng g c components/cart
+- ng g c components/footer
+- ng g s services/api
+
+- index.html - css, js,fontawesome
+- header.html
+- header.css
+- products.html
+- products.css
+
+TEST API using Postman
+- fake store api (dummy products info)--> postman --> GET https://fakestoreapi.com/products
+
+PRODUCT
+- app.module.ts - HttpClientModule
+- api.service.ts - inject httpclient
+- products.ts - var prodlist,inject apiservice, response will be stored in prodlist
+- products.html -> interpolation
+- products.css 
+
+ROUTE CONFIG
+- approuting.ts - cart,products
+
+CART
+- cart.html
+- cart.css
+- ng g s services/cartapi
+- cartapi.ts - inject httpclient,cardDataList,productList, getProductData(),setProductList(),addToCart(),getTotalAmount(),removeCartData(),removeAllCart()
+- product.ts - inject cartapi,forEach(),addToCart(),
+- product.html - addToCart()
+
+TOTAL CART ITEMS
+- header.ts - inject cartapi,totalItemNumber
+- header.html - routerlink,{{}}
+
+CART
+- cart.ts  - inject cartapi,products,allProducts, removeProduct(), removeAllProduct()
+- cart.html - *ngFor, alter *ngIf, routerLink products (shopnow) , buttons
+
+
+
+

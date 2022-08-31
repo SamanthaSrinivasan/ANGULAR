@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": 5,
+      "firstName": "samantha",
+      "lastName": "antha",
+      "email": "antha",
+      "mobile": "55555",
+      "fees": "22"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

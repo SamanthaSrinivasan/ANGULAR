@@ -1,0 +1,49 @@
+<div class="cart-top container-fluid">
+    <div class="container d-flex">
+
+        <div class="items">
+            <a>
+                <img src="https://media.istockphoto.com/vectors/shopping-basket-with-tubes-vector-id682190248?k=20&m=682190248&s=612x612&w=0&h=EPuJMqY_7vD04zQKZdTKnmZl4agrF_3vQKacUiRKH74=">
+                <h6>All Products</h6>
+            </a>
+        </div>
+
+        <div class="items">
+            <a>
+                <img src="https://thumbs.dreamstime.com/b/laptop-tablet-smartphone-headphone-electronic-device-isolated-white-background-133428983.jpg">
+                <h6>Electronics</h6>
+            </a>
+        </div>
+
+        <div class="items">
+            <a>
+                <img src="https://image.pngaaa.com/766/238766-middle.png">
+                <h6>Fashion</h6>
+            </a>
+        </div>
+
+        <div class="items">
+            <a>
+                <img src="https://rukminim1.flixcart.com/image/714/857/k6zda4w0/jewellery-set/b/d/n/nk-2965-luxor-original-imafpbrna6pkyhmq.jpeg?q=50">
+                <h6>Jewellery</h6>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+    <ng-container *ngFor="let item of productList">
+        <div class="card col-md-3">
+            <img src="{{item.image}}" alt="">
+            <h5 class="itemdata">{{item.title}}</h5>
+            <p class="itemdata">{{item.description}}</p>
+            <p><strong>Price:</strong>${{item.price}}</p>
+            <p>{{item.category}}</p>
+            <button class="btn btn-primary" (click)="addToCart(item)">Add To Cart</button>
+        </div>
+    </ng-container>
+    </div>
+</div>

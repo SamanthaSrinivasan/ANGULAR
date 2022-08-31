@@ -1,0 +1,36 @@
+{
+  "contacts": [
+    {
+      "name": "sainz",
+      "photo": "https://imgnew.outlookindia.com/public/uploads/articles/2021/1/8/Carlos-Sainz-Twitter.jpg",
+      "email": "201010100633@presidencyuniversity.in",
+      "mobile": 7348889563,
+      "company": "CSE",
+      "title": "aaa",
+      "groupId": "3",
+      "id": "Ka5COts"
+    }
+  ],
+  "groups": [
+    {
+      "id": "1",
+      "name": "Colleague"
+    },
+    {
+      "id": "2",
+      "name": "Family"
+    },
+    {
+      "id": "3",
+      "name": "Friend"
+    },
+    {
+      "id": "4",
+      "name": "Service"
+    },
+    {
+      "id": "5",
+      "name": "Social"
+    }
+  ]
+}
