@@ -1,0 +1,96 @@
+FOOD ORDER :
+
+- ng new food-order
+- Add Google Fonts CDN --> styles.css
+- Add Bootstrap CDN --> index.html
+
+HEADER :
+- ng g c header
+- app.html - selector
+- header.html 
+- header.css
+
+HOME :
+- ng g c home
+- app-routing.module.ts --> HomeComponent
+- app.html --> router-outlet
+- assets --> food imgs
+- ng g s services/food/food
+- foodservice.ts --> getAll() --> getAll():string[]{return ['/assets/burger.jpg']
+- home.ts --> Inject FoodService, foods property--> foods[] , getall() 
+- home.html --> *ngFor - images
+- home.css
+
+CLASS : to hold food details
+- shared folder -> models folder --> food.ts
+- food.service.ts --> import foods,getAll() --> id,name,cooktime,price,fav,origins,stars,imgurl,tags
+- home.ts --> import foods
+- home.html --> {{food.imageUrl}}, foodname,heart
+
+Add Star --> https://www.npmjs.com/package/ng-starrating
+- npm install ng-starrating --force
+- app.module.ts --> ratingmodule
+- home.ts --> StarRatingComponent
+- home.html --> <star-rating> 
+
+- home.html --> <product-item-footer>
+- home.css
+
+SEARCH
+- app-routing.ts 
+- home.ts --> activatedroute - searchItem
+- ng g c search
+- search.ts --> searchItem, activatedRoute,router,search() --> using router for putting searchItem into urls
+- search.html -->search(), [(ngModel)] --> formsModule(app.module.ts) 
+- home.html --> <app-search> --> activatedRoute to show url searchItem inside searchbox
+- search.css
+
+TAGS
+- app-routing.ts 
+- home.ts --> else if
+- food.service.ts --> getAllFoodByTag(),getAllTag()
+- Tag.ts --> Model for holding tags
+- food.service.ts -->getAllTag(), inject foodservice
+- ng g c tags
+- tags.ts -->tags
+- tags.html
+- home.html --> <app-tags>
+- tags.css
+
+
+FOOD PAGE
+- ng g c food-page
+- app-routing.ts
+- home.html --> routerLink
+- foodpage.ts --> food,activatedRoute,foodservice
+- foodservice.ts --> getFoodById()
+- foodpage.html & tags.ts & tags.html
+- foodpage.css
+
+CART
+- Model --> cartitem.ts
+- Model --> cart.ts
+- ng g s services/cart
+- cart.service.ts --> cart,addToCart(),removeFromCart(),changeQuantity(),getCart()
+
+- ng g c cart-page
+- app-routing.ts
+- cart-page.ts --> cart,setCart(),removeFromCart(),changeQuantity()
+- foodpage.ts--> cartservice,router,addToCart()
+- foodpage.html --> addToCart()
+- cart-page.html 
+- cart-page.css
+
+
+NOT FOUND
+- ng g c not-found
+- not-found.ts
+- not-found.html
+- cart-page.html
+- not-found.css
+- home.html
+
+
+FOOD WITH ID NOT FOUND --> http://localhost:4200/food/299
+- food-page.html
+
